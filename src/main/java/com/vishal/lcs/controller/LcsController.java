@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class LcsController
 {
@@ -19,6 +21,13 @@ public class LcsController
     {
         this.lcsService = lcsService;
         this.lcsRepo = lcsRepo;
+    }
+
+    @PostMapping("listinput")
+    public String LCSprint(@RequestBody List<String> list)   //RequestBody is needed to process JSON data
+    {
+        // LcsService lcsService =new LcsService();          //wrong approach
+        return lcsService.LCSprint(list);                    //forwarding the values to main program
     }
 
     @PostMapping("lcs")
@@ -40,18 +49,4 @@ public class LcsController
     {
         return ResponseEntity.ok(this.lcsRepo.findAll());
     }
-
-//    @PostMapping("lcs")
-//    public String LCSprint(@RequestBody List<String> list)   //RequestBody is needed to process JSON data
-//    {
-//        // LcsService lcsService =new LcsService();          //wrong approach
-//        return lcsService.LCSprint(list);                    //forwarding the values to main program
-//    }
-
-//    @PostMapping("addLcs")
-//    public String AddLcs(@RequestBody List<String> list)   //RequestBody is needed to process JSON data
-//    {
-//        lcsRepo.save(list);
-//        return lcsService.LCSprint(list);                    //forwarding the values to main program
-//    }
 }
