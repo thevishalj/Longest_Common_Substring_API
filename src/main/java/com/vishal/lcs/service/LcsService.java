@@ -40,7 +40,7 @@ public class LcsService {
         }
 
         StringBuilder result = new StringBuilder();
-        String R = "Length of longest common Substring is: " + len;
+        String R = "Length of longest common Substring is: " + len + " \n";
 
         while (dp[row][col] != 0) {
             result.insert(0, s1.charAt(row - 1));
@@ -48,6 +48,6 @@ public class LcsService {
             row--;
             col--;
         }
-        return R + "\nLongest common Substring is: " + result;
+        return R + "Longest common Substring is: " + result;
     }
 }
