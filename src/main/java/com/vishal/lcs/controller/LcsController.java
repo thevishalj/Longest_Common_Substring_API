@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -36,7 +38,7 @@ public class LcsController
     }
 
     @PostMapping("addlcs")
-    public ResponseEntity<?> LcsAdd(@RequestBody LcsModel Lcs)
+    public ResponseEntity<?> LcsAdd(@Valid @RequestBody LcsModel Lcs)
     {
         Lcs.setAnswer(lcsService.LCSprint(Lcs.getList()));
         LcsModel save = this.lcsRepo.save(Lcs);
