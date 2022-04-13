@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Getter
@@ -12,8 +14,7 @@ import java.util.List;
 
 public class LcsInput
 {
-//    @NotNull(message = "List cannot be Null")
-//    @Size(min = 1, message = "Minimum size should be 1")
-
+    @NotNull(message = "Set of Strings Can't be Empty")
+    @Valid
     private List<String> list;
 }
