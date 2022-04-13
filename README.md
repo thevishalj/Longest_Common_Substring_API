@@ -1,6 +1,6 @@
-Longest_Common_Substring_API
+# Longest_Common_Substring_API
 
-Connect to MongoDb Compass
+**Connect to MongoDb Compass**
 
 Host: Localhost
 
