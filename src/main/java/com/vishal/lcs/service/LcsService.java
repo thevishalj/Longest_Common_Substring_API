@@ -1,5 +1,6 @@
 package com.vishal.lcs.service;
 
+import com.vishal.lcs.model.LcsOutput;
 import org.springframework.stereotype.Component;
 import java.util.List;
 

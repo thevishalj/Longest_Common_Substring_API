@@ -1,6 +1,7 @@
 package com.vishal.lcs.controller;
 
-import com.vishal.lcs.model.LcsModel;
+import com.vishal.lcs.model.LcsInput;
+import com.vishal.lcs.model.LcsOutput;
 import com.vishal.lcs.repository.LcsRepo;
 import com.vishal.lcs.service.LcsService;
 import org.springframework.http.ResponseEntity;
@@ -32,20 +33,20 @@ public class LcsController
     }
 
     @PostMapping("lcs")
-    public String LCSprint(@RequestBody LcsModel Lcs)
+    public String LCSprint(@RequestBody LcsInput Lcs)
     {
         return lcsService.LCSprint(Lcs.getList());
     }
 
-    @PostMapping("addlcs")
-    public ResponseEntity<?> LcsAdd(@Valid @RequestBody LcsModel Lcs)
+    @PostMapping("addtodb")
+    public ResponseEntity<?> LcsAdd(@Valid @RequestBody LcsInput LcsIn, LcsOutput LcsOut)
     {
-        Lcs.setAnswer(lcsService.LCSprint(Lcs.getList()));
-        LcsModel save = this.lcsRepo.save(Lcs);
+        LcsOut.setAnswer(lcsService.LCSprint(LcsIn.getList()));
+        LcsOutput save = lcsRepo.save(LcsOut);
         return ResponseEntity.ok(save);
     }
 
-    @GetMapping("getall")
+    @GetMapping("getfromDB")
     public ResponseEntity<?> getlcs()
     {
         return ResponseEntity.ok(this.lcsRepo.findAll());
