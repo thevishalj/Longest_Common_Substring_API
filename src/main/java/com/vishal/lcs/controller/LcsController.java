@@ -26,20 +26,20 @@ public class LcsController
     }
 
     @PostMapping("listinput")
-    public String LCSprint(@RequestBody List<LcsOutput> list)   //RequestBody is needed to process JSON data
+    public String listInput(@RequestBody List<LcsOutput> list)   //RequestBody is needed to process JSON data
     {
-        // LcsService lcsService = new LcsService();          //wrong approach
-        return lcsService.LCSprint(list);                    //forwarding the values to main program
+        // LcsService lcsService = new LcsService();             //wrong approach
+        return lcsService.LCSprint(list);                        //forwarding the values to main program
     }
 
     @PostMapping("lcs")
-    public String LCSprint(@RequestBody LcsInput Lcs)
+    public String Lcs(@RequestBody LcsInput Lcs)
     {
         return lcsService.LCSprint(Lcs.getList());
     }
 
     @PostMapping("addtodb")
-    public ResponseEntity<?> LcsAdd(@Valid @RequestBody LcsInput LcsIn, LcsOutput LcsOut)
+    public ResponseEntity<?> lcsAdd(@Valid @RequestBody LcsInput LcsIn, LcsOutput LcsOut)
     {
         LcsOut.setValue(lcsService.LCSprint(LcsIn.getList()));
         LcsOutput save = lcsRepo.save(LcsOut);
@@ -47,7 +47,7 @@ public class LcsController
     }
 
     @GetMapping("getfromDB")
-    public ResponseEntity<?> getlcs()
+    public ResponseEntity<?> getLcs()
     {
         return ResponseEntity.ok(this.lcsRepo.findAll());
     }

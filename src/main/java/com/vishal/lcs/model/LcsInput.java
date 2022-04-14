@@ -11,6 +11,6 @@ import java.util.List;
 @Valid
 public class LcsInput
 {
-    @NotNull(message = "Set of Strings Can't be Empty")         //Message is not printing
+    @NotNull(message = "Set of Strings Can't be Null and Empty")         //Message is not printing
     private List<LcsOutput> list;
 }
