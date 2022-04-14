@@ -12,9 +12,11 @@ import javax.validation.constraints.NotEmpty;
 @Getter
 @Setter
 @ToString
+@Valid
 
 @Document(collection = "LcsCollection")
 public class LcsOutput
 {
-    private String Answer;
+    @NotEmpty(message = "String cannot be Empty or Null")
+    private String Value;
 }

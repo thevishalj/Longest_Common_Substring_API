@@ -6,13 +6,13 @@ import java.util.List;
 
 @Component                                          //this is helping the controller to locate this class
 public class LcsService {
-    public String LCSprint(List<String> list)
+    public String LCSprint(List<LcsOutput> list)
     {
         int len = 0;
         int row = 0, col = 0;
 
-        String s1 = list.get(0);
-        String s2 = list.get(1);
+        String s1 = (list.get(0)).getValue();
+        String s2 = (list.get(1)).getValue();
         int m = s1.length();
         int n = s2.length();
 

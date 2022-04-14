@@ -12,5 +12,5 @@ import java.util.List;
 public class LcsInput
 {
     @NotNull(message = "Set of Strings Can't be Empty")         //Message is not printing
-    private List<String> list;
+    private List<LcsOutput> list;
 }
