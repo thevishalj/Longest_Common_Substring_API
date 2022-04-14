@@ -1,9 +1,6 @@
 package com.vishal.lcs.model;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
+import lombok.*;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.util.List;
@@ -11,10 +8,9 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-
+@Valid
 public class LcsInput
 {
-    @NotNull(message = "Set of Strings Can't be Empty")
-    @Valid
+    @NotNull(message = "Set of Strings Can't be Empty")         //Message is not printing
     private List<String> list;
 }
