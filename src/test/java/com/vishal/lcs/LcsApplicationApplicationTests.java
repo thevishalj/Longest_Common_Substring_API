@@ -2,24 +2,15 @@ package com.vishal.lcs;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 //@SpringBootTest
 class LcsApplicationApplicationTests
 {
-//    private LcsServiceTest lcsServiceTest;
-//
-//    @Test
-//    void output()
-//    {
-//        String Expected = "Longest common Substring is: [vishal] \nAnd length of LCS is: [6]";
-//        List<String> l1 = new ArrayList<String>();
-//        l1.add("vishaljalsdkfno");
-//        l1.add("vishaljain");
-//        String ActualOutput = lcsServiceTest.LCSprint(l1);
-//        assertThat(ActualOutput).isEqualTo(Expected);
-//    }
-
     Calculator underTest = new Calculator();
     @Test
     void itShouldAddNumbers()
